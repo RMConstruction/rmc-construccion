@@ -3,11 +3,10 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
-import Portfolio from '@/components/Portfolio';
-import Testimonials from '@/components/Testimonials';
+import CompanyBenefits from '@/components/CompanyBenefits';
+import Trajectory from '@/components/Trajectory';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import { Calendar, Award, Users } from "lucide-react";
 
 const Index = () => {
   useEffect(() => {
@@ -19,52 +18,47 @@ const Index = () => {
     <div className="min-h-screen w-full overflow-visible">
       <Navbar />
       <Hero />
-      <Services />
-      <Portfolio />
       
-      {/* Trayectoria Section */}
+      {/* Introducción de la empresa */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="heading-lg mb-4">Nuestra Trayectoria</h2>
-            <p className="paragraph">
-              En Donopoly nos enorgullece nuestra larga trayectoria de excelencia y servicio excepcional. Estos números reflejan nuestro compromiso con la calidad.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <Calendar className="h-8 w-8" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="heading-lg mb-4">Introducción a Nuestra Empresa</h2>
+              <p className="paragraph mb-6">
+                En Donopoly, nos especializamos en arquitectura, ingeniería y construcción de alta calidad. 
+                Con más de 15 años de experiencia en el sector, ofrecemos soluciones integrales para 
+                proyectos residenciales y comerciales.
+              </p>
+              <p className="paragraph">
+                Nuestro enfoque combina innovación técnica, diseño funcional y construcción sostenible 
+                para crear espacios que superan las expectativas de nuestros clientes.
+              </p>
+              <div className="mt-8">
+                <a href="/sobre-nosotros" className="btn-primary">Conozca más sobre nosotros</a>
               </div>
-              <h3 className="text-4xl font-bold mb-2">15+</h3>
-              <p className="text-lg font-medium">Años de Experiencia</p>
             </div>
-            
-            <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <Award className="h-8 w-8" />
-              </div>
-              <h3 className="text-4xl font-bold mb-2">500+</h3>
-              <p className="text-lg font-medium">Proyectos Culminados</p>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=2670&auto=format&fit=crop" 
+                alt="Proyectos destacados" 
+                className="w-full h-auto object-cover"
+              />
             </div>
-            
-            <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <Users className="h-8 w-8" />
-              </div>
-              <h3 className="text-4xl font-bold mb-2">400+</h3>
-              <p className="text-lg font-medium">Clientes Satisfechos</p>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <a href="/sobre-nosotros" className="btn-primary">Conozca más sobre nosotros</a>
           </div>
         </div>
       </section>
       
-      <Testimonials />
+      {/* Beneficios de trabajar con nosotros */}
+      <CompanyBenefits />
+      
+      {/* Nuestra Trayectoria */}
+      <Trajectory />
+      
+      {/* Nuestros Servicios */}
+      <Services />
+      
+      {/* Contacto */}
       <Contact />
       <Footer />
     </div>
