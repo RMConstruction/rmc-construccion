@@ -43,7 +43,7 @@ const Testimonials = () => {
       (entries) => {
         const [entry] = entries;
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.add('opacity-100');
           observer.unobserve(entry.target);
         }
       },
