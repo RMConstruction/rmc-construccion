@@ -1,8 +1,33 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 
 const Footer = () => {
+  const footerRef = useRef<HTMLElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100');
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => {
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
+      }
+    };
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -11,7 +36,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-white pt-16 pb-8">
+    <footer 
+      ref={footerRef}
+      className="bg-foreground text-white pt-16 pb-8 opacity-0 transition-opacity duration-1000"
+    >
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
