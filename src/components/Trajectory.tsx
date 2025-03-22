@@ -1,6 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
-import { Calendar, Award, Users } from "lucide-react";
+import { Calendar, Award, Users, Sparkle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Trajectory = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,7 +43,7 @@ const Trajectory = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
+          <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
               <Calendar className="h-8 w-8" />
             </div>
@@ -50,15 +51,21 @@ const Trajectory = () => {
             <p className="text-lg font-medium">Años de Experiencia</p>
           </div>
           
-          <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-              <Award className="h-8 w-8" />
+          <div className={cn(
+            "p-8 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-3",
+            "bg-primary/10 shadow-xl border-2 border-primary/20 scale-105 relative"
+          )}>
+            <div className="absolute -top-3 -right-3">
+              <Sparkle className="h-8 w-8 text-primary animate-pulse" />
             </div>
-            <h3 className="text-4xl font-bold mb-2">500+</h3>
-            <p className="text-lg font-medium">Proyectos Culminados</p>
+            <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center text-primary mx-auto mb-4 border-2 border-primary/30">
+              <Award className="h-10 w-10" />
+            </div>
+            <h3 className="text-5xl font-bold mb-3 text-primary">500+</h3>
+            <p className="text-xl font-medium">Proyectos Culminados</p>
           </div>
           
-          <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
+          <div className="bg-secondary/20 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
               <Users className="h-8 w-8" />
             </div>

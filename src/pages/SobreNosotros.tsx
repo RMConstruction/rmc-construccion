@@ -1,9 +1,8 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Home, Award, CheckCircle, Users, Clock, Calendar, Star } from "lucide-react";
+import { Award, CheckCircle, Users, Clock, Calendar, Star } from "lucide-react";
 
 const SobreNosotros = () => {
   useEffect(() => {
@@ -20,7 +19,6 @@ const SobreNosotros = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">
-                  <Home className="h-4 w-4 mr-1" />
                   Inicio
                 </BreadcrumbLink>
               </BreadcrumbItem>
