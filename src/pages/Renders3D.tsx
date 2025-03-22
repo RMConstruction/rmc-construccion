@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Home, CheckCircle, Cube } from "lucide-react";
+import { Home, CheckCircle, Cube3d } from "lucide-react";
 
 const Renders3D = () => {
   useEffect(() => {
@@ -101,7 +101,7 @@ const Renders3D = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <Cube className="h-8 w-8" />
+                <Cube3d className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">Presentación Profesional</h3>
               <p className="text-center text-muted-foreground">
@@ -111,7 +111,7 @@ const Renders3D = () => {
             
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <Cube className="h-8 w-8" />
+                <Cube3d className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">Precisión en Detalles</h3>
               <p className="text-center text-muted-foreground">
@@ -121,7 +121,7 @@ const Renders3D = () => {
             
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <Cube className="h-8 w-8" />
+                <Cube3d className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">Vista Previa Realista</h3>
               <p className="text-center text-muted-foreground">

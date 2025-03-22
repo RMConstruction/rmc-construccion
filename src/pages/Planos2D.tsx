@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Home, CheckCircle, LayoutPlaneLine } from "lucide-react";
+import { Home, CheckCircle, LayoutPanelLeft } from "lucide-react";
 
 const Planos2D = () => {
   useEffect(() => {
@@ -101,7 +101,7 @@ const Planos2D = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <LayoutPlaneLine className="h-8 w-8" />
+                <LayoutPanelLeft className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-4">AutoCAD</h3>
               <p className="text-muted-foreground">
@@ -111,7 +111,7 @@ const Planos2D = () => {
             
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <LayoutPlaneLine className="h-8 w-8" />
+                <LayoutPanelLeft className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Revit</h3>
               <p className="text-muted-foreground">
@@ -121,7 +121,7 @@ const Planos2D = () => {
             
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                <LayoutPlaneLine className="h-8 w-8" />
+                <LayoutPanelLeft className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-4">ArchiCAD</h3>
               <p className="text-muted-foreground">
