@@ -38,7 +38,7 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled 
+        scrolled || isOpen
           ? "bg-white/95 backdrop-blur-md shadow-sm py-3" 
           : "bg-transparent py-5"
       )}
@@ -48,7 +48,7 @@ const Navbar = () => {
           href="/" 
           className={cn(
             "font-display text-2xl font-bold transition-all duration-300",
-            scrolled ? "text-primary" : "text-white"
+            scrolled || isOpen ? "text-primary" : "text-white"
           )}
           aria-label="Donopoly Remodeling"
         >
@@ -188,11 +188,11 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Now with higher z-index to stay above the menu */}
         <button 
           className={cn(
-            "md:hidden",
-            scrolled ? "text-foreground" : "text-white"
+            "md:hidden relative z-[60]", // Increased z-index to be above the mobile menu
+            isOpen ? "text-foreground" : (scrolled ? "text-foreground" : "text-white")
           )}
           onClick={toggleMenu}
           aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
@@ -201,10 +201,10 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Fixed background issue */}
       <div 
         className={cn(
-          "md:hidden fixed inset-0 bg-white z-40 pt-20 transform transition-transform duration-300 ease-in-out",
+          "md:hidden fixed inset-0 bg-white z-50 pt-20 transform transition-transform duration-300 ease-in-out",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >

@@ -44,7 +44,7 @@ const Services = () => {
       title: 'Área de Construcción',
       description: 'Servicios completos de construcción para proyectos residenciales y comerciales.',
       link: '/servicios/construccion',
-      imageUrl: 'https://images.unsplash.com/photo-1541976498488-7357622883e4?auto=format&fit=crop&q=80&w=1470'
+      imageUrl: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1931'
     },
     {
       icon: <Briefcase className="h-10 w-10" />,
@@ -65,7 +65,7 @@ const Services = () => {
       title: 'Renders 3D',
       description: 'Visualizaciones tridimensionales realistas para ver su proyecto antes de construirlo.',
       link: '/servicios/renders-3d',
-      imageUrl: 'https://images.unsplash.com/photo-1545986753-d894bc1f7162?auto=format&fit=crop&q=80&w=1470'
+      imageUrl: 'https://images.unsplash.com/photo-1618005198919-177e9dd3b230?auto=format&fit=crop&q=80&w=1548'
     },
     {
       icon: <ClipboardCheck className="h-10 w-10" />,
