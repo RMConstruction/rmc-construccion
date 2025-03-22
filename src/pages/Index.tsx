@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import CompanyBenefits from '@/components/CompanyBenefits';
 import Trajectory from '@/components/Trajectory';
+import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -57,6 +58,9 @@ const Index = () => {
       
       {/* Nuestros Servicios */}
       <Services />
+      
+      {/* Nuestros Proyectos */}
+      <Portfolio />
       
       {/* Contacto */}
       <Contact />

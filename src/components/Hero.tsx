@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -27,13 +27,13 @@ const Hero = () => {
     <section 
       id="home" 
       ref={heroRef}
-      className="relative h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
+      className="relative h-screen bg-cover bg-center bg-fixed bg-no-repeat overflow-hidden"
       style={{ 
-        backgroundImage: `url('https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=2670&auto=format&fit=crop')` 
+        backgroundImage: `url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1931')` 
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Overlay with gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
       
       {/* Content */}
       <div 
@@ -41,29 +41,32 @@ const Hero = () => {
         className="relative container-custom h-full flex flex-col justify-center"
       >
         <div className="max-w-3xl animate-fade-in-up">
-          <div className="bg-primary/90 text-white text-sm py-1.5 px-3 rounded-full inline-block mb-5 font-medium">
-            Construcción y Remodelación de Calidad
+          <div className="bg-primary/90 text-white text-sm py-1.5 px-4 rounded-full inline-flex items-center gap-2 mb-6 font-medium">
+            <span className="bg-white w-2 h-2 rounded-full"></span>
+            Excelencia en Construcción y Diseño
           </div>
-          <h1 className="heading-xl text-white mb-6">
-            Transformamos tus espacios en 
-            <span className="text-primary"> obras maestras</span>
+          <h1 className="heading-xl text-white mb-8 leading-tight">
+            Transformamos <span className="text-primary">Ideas</span> en 
+            <br />
+            <span className="text-primary">Espacios Excepcionales</span>
           </h1>
-          <p className="text-white/90 text-xl mb-8 max-w-2xl">
-            Especialistas en remodelación residencial y comercial con más de 15 años de experiencia. Convertimos su visión en realidad.
+          <p className="text-white/90 text-xl mb-10 max-w-2xl font-light">
+            Especialistas en arquitectura, construcción y gestión de proyectos con más de 15 años creando espacios que inspiran y perduran.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-5">
             <a 
               href="#services" 
               className="btn-primary flex items-center gap-2 group"
             >
-              Nuestros Servicios
+              Explorar Servicios
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a 
               href="#portfolio" 
-              className="bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20 px-6 py-3 rounded-md font-medium transition-all duration-300"
+              className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 hover:bg-white/20 px-6 py-3 rounded-md font-medium transition-all duration-300 flex items-center gap-2"
             >
               Ver Proyectos
+              <ArrowDown size={18} className="transition-transform duration-300 group-hover:translate-y-1" />
             </a>
           </div>
         </div>

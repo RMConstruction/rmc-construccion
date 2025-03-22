@@ -9,7 +9,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
@@ -40,36 +39,50 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-md py-3" 
+          ? "bg-white/95 backdrop-blur-md shadow-sm py-3" 
           : "bg-transparent py-5"
       )}
     >
       <div className="container-custom flex justify-between items-center">
         <a 
           href="/" 
-          className="font-display text-2xl font-bold text-primary transition-all duration-300"
+          className={cn(
+            "font-display text-2xl font-bold transition-all duration-300",
+            scrolled ? "text-primary" : "text-white"
+          )}
           aria-label="Donopoly Remodeling"
         >
           Donopoly
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center space-x-2">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="space-x-1">
               <NavigationMenuItem>
                 <NavigationMenuLink 
                   href="/"
-                  className={navigationMenuTriggerStyle()}
+                  className={cn(
+                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    scrolled ? "text-foreground" : "text-white"
+                  )}
                 >
                   Inicio
                 </NavigationMenuLink>
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Servicios</NavigationMenuTrigger>
+                <NavigationMenuTrigger 
+                  className={cn(
+                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    scrolled ? "text-foreground" : "text-white",
+                    "bg-transparent hover:bg-primary/10 data-[state=open]:bg-primary/10"
+                  )}
+                >
+                  Servicios
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 w-[200px]">
+                  <ul className="grid gap-1 p-4 w-[200px]">
                     <li>
                       <NavigationMenuLink 
                         href="/servicios/residencial"
@@ -99,9 +112,17 @@ const Navbar = () => {
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Proyectos</NavigationMenuTrigger>
+                <NavigationMenuTrigger 
+                  className={cn(
+                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    scrolled ? "text-foreground" : "text-white",
+                    "bg-transparent hover:bg-primary/10 data-[state=open]:bg-primary/10"
+                  )}
+                >
+                  Proyectos
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 w-[200px]">
+                  <ul className="grid gap-1 p-4 w-[200px]">
                     <li>
                       <NavigationMenuLink 
                         href="/proyectos/residenciales"
@@ -133,7 +154,10 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink 
                   href="/sobre-nosotros"
-                  className={navigationMenuTriggerStyle()}
+                  className={cn(
+                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    scrolled ? "text-foreground" : "text-white"
+                  )}
                 >
                   Sobre Nosotros
                 </NavigationMenuLink>
@@ -142,7 +166,10 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink 
                   href="/#testimonials"
-                  className={navigationMenuTriggerStyle()}
+                  className={cn(
+                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    scrolled ? "text-foreground" : "text-white"
+                  )}
                 >
                   Testimonios
                 </NavigationMenuLink>
@@ -152,7 +179,10 @@ const Navbar = () => {
           
           <a 
             href="/#contact" 
-            className="btn-primary"
+            className={cn(
+              "btn-primary ml-2",
+              !scrolled && "bg-white text-primary hover:bg-white/90"
+            )}
           >
             Contáctanos
           </a>
@@ -160,7 +190,10 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-foreground"
+          className={cn(
+            "md:hidden",
+            scrolled ? "text-foreground" : "text-white"
+          )}
           onClick={toggleMenu}
           aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
@@ -186,33 +219,33 @@ const Navbar = () => {
           
           <div className="w-full">
             <div 
-              className="flex justify-between items-center w-full py-2 border-b border-gray-100"
+              className="flex justify-center items-center w-full py-2 border-b border-gray-100 relative"
               onClick={() => {
                 const el = document.getElementById('servicios-mobile');
                 if (el) el.classList.toggle('hidden');
               }}
             >
               <span className="text-foreground text-xl font-medium">Servicios</span>
-              <ChevronDown size={20} />
+              <ChevronDown size={20} className="absolute right-0" />
             </div>
-            <div id="servicios-mobile" className="hidden pl-4 py-2 space-y-3">
+            <div id="servicios-mobile" className="hidden py-2 space-y-3">
               <a
                 href="/servicios/residencial"
-                className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
                 onClick={closeMenu}
               >
                 Remodelación Residencial
               </a>
               <a
                 href="/servicios/comercial"
-                className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
                 onClick={closeMenu}
               >
                 Construcción Comercial
               </a>
               <a
                 href="/#services"
-                className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
                 onClick={closeMenu}
               >
                 Todos los Servicios
@@ -222,33 +255,33 @@ const Navbar = () => {
           
           <div className="w-full">
             <div 
-              className="flex justify-between items-center w-full py-2 border-b border-gray-100"
+              className="flex justify-center items-center w-full py-2 border-b border-gray-100 relative"
               onClick={() => {
                 const el = document.getElementById('proyectos-mobile');
                 if (el) el.classList.toggle('hidden');
               }}
             >
               <span className="text-foreground text-xl font-medium">Proyectos</span>
-              <ChevronDown size={20} />
+              <ChevronDown size={20} className="absolute right-0" />
             </div>
-            <div id="proyectos-mobile" className="hidden pl-4 py-2 space-y-3">
+            <div id="proyectos-mobile" className="hidden py-2 space-y-3">
               <a
                 href="/proyectos/residenciales"
-                className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
                 onClick={closeMenu}
               >
                 Residenciales
               </a>
               <a
                 href="/proyectos/comerciales"
-                className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
                 onClick={closeMenu}
               >
                 Comerciales
               </a>
               <a
                 href="/#portfolio"
-                className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
                 onClick={closeMenu}
               >
                 Todos los Proyectos

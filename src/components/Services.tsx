@@ -2,12 +2,14 @@
 import React, { useRef, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { ArrowRight, Building, Briefcase, FileText, Cuboid, ClipboardCheck } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface Service {
   icon: React.ReactNode;
   title: string;
   description: string;
   link: string;
+  imageUrl: string;
 }
 
 const Services = () => {
@@ -41,31 +43,36 @@ const Services = () => {
       icon: <Building className="h-10 w-10" />,
       title: 'Área de Construcción',
       description: 'Servicios completos de construcción para proyectos residenciales y comerciales.',
-      link: '/servicios/construccion'
+      link: '/servicios/construccion',
+      imageUrl: 'https://images.unsplash.com/photo-1541976498488-7357622883e4?auto=format&fit=crop&q=80&w=1470'
     },
     {
       icon: <Briefcase className="h-10 w-10" />,
       title: 'Project Manager (PM)',
       description: 'Gestión profesional de proyectos para optimizar tiempos, costos y resultados.',
-      link: '/servicios/project-manager'
+      link: '/servicios/project-manager',
+      imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1470'
     },
     {
       icon: <FileText className="h-10 w-10" />,
       title: 'Planos 2D',
       description: 'Diseño detallado y técnico de planos para una visualización clara de su proyecto.',
-      link: '/servicios/planos-2d'
+      link: '/servicios/planos-2d',
+      imageUrl: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=1470'
     },
     {
       icon: <Cuboid className="h-10 w-10" />,
       title: 'Renders 3D',
       description: 'Visualizaciones tridimensionales realistas para ver su proyecto antes de construirlo.',
-      link: '/servicios/renders-3d'
+      link: '/servicios/renders-3d',
+      imageUrl: 'https://images.unsplash.com/photo-1545986753-d894bc1f7162?auto=format&fit=crop&q=80&w=1470'
     },
     {
       icon: <ClipboardCheck className="h-10 w-10" />,
       title: 'Permisos',
       description: 'Gestión completa de permisos, licencias y cumplimiento normativo para su proyecto.',
-      link: '/servicios/permisos'
+      link: '/servicios/permisos',
+      imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1470'
     }
   ];
 
@@ -88,25 +95,38 @@ const Services = () => {
             <div
               key={index}
               className={cn(
-                "bg-white p-8 rounded-lg shadow-md transition-all duration-500 hover:shadow-xl group",
+                "bg-white rounded-lg shadow-md transition-all duration-500 hover:shadow-xl group overflow-hidden",
                 "transform hover:translate-y-[-5px]"
               )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="mb-4 text-primary">{service.icon}</div>
-              <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                {service.description}
-              </p>
-              <a 
-                href={service.link} 
-                className="flex items-center text-primary font-medium group-hover:text-primary/80"
-              >
-                Ver más
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              <div className="relative">
+                <AspectRatio ratio={16 / 9}>
+                  <img 
+                    src={service.imageUrl} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </AspectRatio>
+                <div className="absolute top-4 right-4 bg-primary text-white p-2 rounded-full">
+                  {service.icon}
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  {service.description}
+                </p>
+                <a 
+                  href={service.link} 
+                  className="flex items-center text-primary font-medium group-hover:text-primary/80"
+                >
+                  Ver más
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
+              </div>
             </div>
           ))}
         </div>
