@@ -1,6 +1,7 @@
+
 import React, { useRef, useEffect } from 'react';
 import { cn } from "@/lib/utils";
-import { ArrowRight, Building, Briefcase, FileText, Cube3d, ClipboardCheck } from "lucide-react";
+import { ArrowRight, Building, Briefcase, FileText, Cuboid, ClipboardCheck } from "lucide-react";
 
 interface Service {
   icon: React.ReactNode;
@@ -55,7 +56,7 @@ const Services = () => {
       link: '/servicios/planos-2d'
     },
     {
-      icon: <Cube3d className="h-10 w-10" />,
+      icon: <Cuboid className="h-10 w-10" />,
       title: 'Renders 3D',
       description: 'Visualizaciones tridimensionales realistas para ver su proyecto antes de construirlo.',
       link: '/servicios/renders-3d'
