@@ -65,7 +65,7 @@ const Services = () => {
       title: 'Renders 3D',
       description: 'Visualizaciones tridimensionales realistas para ver su proyecto antes de construirlo.',
       link: '/servicios/renders-3d',
-      imageUrl: 'https://images.unsplash.com/photo-1618005198919-177e9dd3b230?auto=format&fit=crop&q=80&w=1548'
+      imageUrl: 'https://plus.unsplash.com/premium_photo-1678559033839-aaf50cb4c3ac?auto=format&fit=crop&q=80&w=1470'
     },
     {
       icon: <ClipboardCheck className="h-10 w-10" />,

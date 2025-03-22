@@ -39,7 +39,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled || isOpen
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-3" 
+          ? "bg-white shadow-sm py-3" 
           : "bg-transparent py-5"
       )}
     >
@@ -191,7 +191,7 @@ const Navbar = () => {
         {/* Mobile Menu Button - Now with higher z-index to stay above the menu */}
         <button 
           className={cn(
-            "md:hidden relative z-[60]", // Increased z-index to be above the mobile menu
+            "md:hidden relative z-[60]", 
             isOpen ? "text-foreground" : (scrolled ? "text-foreground" : "text-white")
           )}
           onClick={toggleMenu}
@@ -201,7 +201,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation - Fixed background issue */}
+      {/* Mobile Navigation - Solid background */}
       <div 
         className={cn(
           "md:hidden fixed inset-0 bg-white z-50 pt-20 transform transition-transform duration-300 ease-in-out",
