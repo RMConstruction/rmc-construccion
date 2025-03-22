@@ -24,54 +24,61 @@ const Hero = () => {
   }, []);
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       ref={heroRef}
       className="relative h-screen bg-cover bg-center bg-fixed bg-no-repeat overflow-hidden"
-      style={{ 
-        backgroundImage: `url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1931')` 
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1931')`,
       }}
     >
       {/* Overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
-      
+
       {/* Content */}
-      <div 
+      <div
         ref={textRef}
         className="relative container-custom h-full flex flex-col justify-center"
       >
         <div className="max-w-3xl animate-fade-in-up">
-          <div className="bg-primary/90 text-white text-sm py-1.5 px-4 rounded-full inline-flex items-center gap-2 mb-6 font-medium">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm py-1.5 px-4 rounded-full inline-flex items-center gap-2 mb-6 font-medium">
             <span className="bg-white w-2 h-2 rounded-full"></span>
             Excelencia en Construcción y Diseño
           </div>
           <h1 className="heading-xl text-white mb-8 leading-tight">
-            Transformamos <span className="text-primary">Ideas</span> en 
+            Transformamos <span className="text-primary">Ideas</span> en
             <br />
             <span className="text-primary">Espacios Excepcionales</span>
           </h1>
           <p className="text-white/90 text-xl mb-10 max-w-2xl font-light">
-            Especialistas en arquitectura, construcción y gestión de proyectos con más de 15 años creando espacios que inspiran y perduran.
+            Especialistas en arquitectura, construcción y gestión de proyectos
+            con más de 15 años creando espacios que inspiran y perduran.
           </p>
           <div className="flex flex-wrap gap-5">
-            <a 
-              href="#services" 
+            <a
+              href="#services"
               className="btn-primary flex items-center gap-2 group"
             >
               Explorar Servicios
-              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </a>
-            <a 
-              href="#portfolio" 
-              className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 hover:bg-white/20 px-6 py-3 rounded-md font-medium transition-all duration-300 flex items-center gap-2"
+            <a
+              href="#portfolio"
+              className="bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 px-6 py-3 rounded-md font-medium transition-all duration-300 flex items-center gap-2"
             >
               Ver Proyectos
-              <ArrowDown size={18} className="transition-transform duration-300 group-hover:translate-y-1" />
+              <ArrowDown
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-y-1"
+              />
             </a>
           </div>
         </div>
       </div>
-      
+
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
         <div className="w-8 h-12 rounded-full border-2 border-white/50 flex justify-center pt-2">

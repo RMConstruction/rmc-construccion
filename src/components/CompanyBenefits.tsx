@@ -54,15 +54,19 @@ const CompanyBenefits = () => {
     >
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="heading-lg mb-4">Beneficios de Trabajar con Nosotros</h2>
+          <h2 className="heading-lg mb-4">
+            Beneficios de Trabajar con Nosotros
+          </h2>
           <p className="paragraph">
-            En Donopoly nos distinguimos por ofrecer un servicio de excelencia, enfocado en la satisfacción del cliente y la calidad del resultado final.
+            En Arquitectura nos distinguimos por ofrecer un servicio de
+            excelencia, enfocado en la satisfacción del cliente y la calidad del
+            resultado final.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {benefits.map((benefit, index) => (
-            <div 
+            <div
               key={index}
               className="bg-white p-8 rounded-lg shadow-md flex items-start gap-4 hover:shadow-lg transition-all duration-300"
             >

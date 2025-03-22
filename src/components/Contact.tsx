@@ -78,14 +78,17 @@ const Contact = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg mb-4">Contáctenos</h2>
           <p className="paragraph">
-            Estamos listos para hacer realidad su proyecto. Contáctenos hoy mismo para discutir sus necesidades y cómo podemos ayudarle.
+            Estamos listos para hacer realidad su proyecto. Contáctenos hoy
+            mismo para discutir sus necesidades y cómo podemos ayudarle.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Información de Contacto</h3>
-            
+            <h3 className="text-2xl font-semibold mb-6">
+              Información de Contacto
+            </h3>
+
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
@@ -96,34 +99,39 @@ const Contact = () => {
                   <p className="font-medium">+1 (555) 123-4567</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Correo Electrónico</p>
-                  <p className="font-medium">info@donopoly.com</p>
+                  <p className="text-sm text-muted-foreground">
+                    Correo Electrónico
+                  </p>
+                  <p className="font-medium">info@arquitectura.com</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
                   <Facebook className="h-6 w-6" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Facebook</p>
-                  <p className="font-medium">facebook.com/donopoly</p>
+                  <p className="font-medium">facebook.com/arquitectura</p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-6">Envíenos un Mensaje</h3>
-            
+
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
                 <FormField
                   control={form.control}
                   name="name"
@@ -137,7 +145,7 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FormField
                     control={form.control}
@@ -146,13 +154,16 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Correo Electrónico</FormLabel>
                         <FormControl>
-                          <Input placeholder="Su correo electrónico" {...field} />
+                          <Input
+                            placeholder="Su correo electrónico"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="phone"
@@ -160,29 +171,39 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Teléfono</FormLabel>
                         <FormControl>
-                          <Input placeholder="Su número de teléfono" {...field} />
+                          <Input
+                            placeholder="Su número de teléfono"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-                
+
                 <FormField
                   control={form.control}
                   name="service"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Servicio de Interés</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Seleccione un servicio" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="construccion">Área de Construcción</SelectItem>
-                          <SelectItem value="project-manager">Project Manager (PM)</SelectItem>
+                          <SelectItem value="construccion">
+                            Área de Construcción
+                          </SelectItem>
+                          <SelectItem value="project-manager">
+                            Project Manager (PM)
+                          </SelectItem>
                           <SelectItem value="planos-2d">Planos 2D</SelectItem>
                           <SelectItem value="renders-3d">Renders 3D</SelectItem>
                           <SelectItem value="permisos">Permisos</SelectItem>
@@ -192,7 +213,7 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="message"
@@ -200,9 +221,9 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Mensaje</FormLabel>
                       <FormControl>
-                        <Textarea 
-                          placeholder="Escriba su mensaje aquí..." 
-                          {...field} 
+                        <Textarea
+                          placeholder="Escriba su mensaje aquí..."
+                          {...field}
                           className="min-h-[120px]"
                         />
                       </FormControl>
@@ -210,8 +231,10 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-                
-                <Button type="submit" className="w-full">Enviar Mensaje</Button>
+
+                <Button type="submit" className="w-full">
+                  Enviar Mensaje
+                </Button>
               </form>
             </Form>
           </div>

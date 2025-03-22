@@ -81,7 +81,7 @@ const ProyectosComerciales = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">
-                  <Home className="h-4 w-4 mr-1" />
+                  {/* <Home className="h-4 w-4 mr-1" /> */}
                   Inicio
                 </BreadcrumbLink>
               </BreadcrumbItem>

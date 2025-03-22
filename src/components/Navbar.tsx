@@ -35,24 +35,22 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav 
+    <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled || isOpen
-          ? "bg-white shadow-sm py-3" 
-          : "bg-transparent py-5"
+        scrolled || isOpen ? "bg-white shadow-sm py-3" : "bg-transparent py-5"
       )}
     >
       <div className="container-custom flex justify-between items-center">
-        <a 
-          href="/" 
+        <a
+          href="/"
           className={cn(
             "font-display text-2xl font-bold transition-all duration-300",
             scrolled || isOpen ? "text-primary" : "text-white"
           )}
           aria-label="Donopoly Remodeling"
         >
-          Donopoly
+          Arquitectura
         </a>
 
         {/* Desktop Navigation */}
@@ -60,23 +58,23 @@ const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList className="space-x-1">
               <NavigationMenuItem>
-                <NavigationMenuLink 
+                <NavigationMenuLink
                   href="/"
                   className={cn(
-                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    "px-3 py-2 hover:bg-white/30 rounded-md text-sm font-medium transition-colors",
                     scrolled ? "text-foreground" : "text-white"
                   )}
                 >
                   Inicio
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              
+
               <NavigationMenuItem>
-                <NavigationMenuTrigger 
+                <NavigationMenuTrigger
                   className={cn(
-                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    "px-3 py-2 hover:bg-white/30 hover:text-white rounded-md text-sm font-medium transition-colors",
                     scrolled ? "text-foreground" : "text-white",
-                    "bg-transparent hover:bg-primary/10 data-[state=open]:bg-primary/10"
+                    "bg-transparent hover:bg-white/30 data-[state=open]:bg-bg-white/30"
                   )}
                 >
                   Servicios
@@ -84,39 +82,45 @@ const Navbar = () => {
                 <NavigationMenuContent>
                   <ul className="grid gap-1 p-4 w-[200px]">
                     <li>
-                      <NavigationMenuLink 
+                      <NavigationMenuLink
                         href="/servicios/residencial"
                         className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground"
                       >
-                        <div className="text-sm font-medium">Remodelación Residencial</div>
+                        <div className="text-sm font-medium">
+                          Remodelación Residencial
+                        </div>
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink 
+                      <NavigationMenuLink
                         href="/servicios/comercial"
                         className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground"
                       >
-                        <div className="text-sm font-medium">Construcción Comercial</div>
+                        <div className="text-sm font-medium">
+                          Construcción Comercial
+                        </div>
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink 
+                      <NavigationMenuLink
                         href="/#services"
                         className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground"
                       >
-                        <div className="text-sm font-medium">Todos los Servicios</div>
+                        <div className="text-sm font-medium">
+                          Todos los Servicios
+                        </div>
                       </NavigationMenuLink>
                     </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              
+
               <NavigationMenuItem>
-                <NavigationMenuTrigger 
+                <NavigationMenuTrigger
                   className={cn(
-                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    "px-3 py-2 hover:bg-white/30 hover:text-white rounded-md text-sm font-medium transition-colors",
                     scrolled ? "text-foreground" : "text-white",
-                    "bg-transparent hover:bg-primary/10 data-[state=open]:bg-primary/10"
+                    "bg-transparent hover:bg-primary/10 data-[state=open]:bg-white/30"
                   )}
                 >
                   Proyectos
@@ -124,7 +128,7 @@ const Navbar = () => {
                 <NavigationMenuContent>
                   <ul className="grid gap-1 p-4 w-[200px]">
                     <li>
-                      <NavigationMenuLink 
+                      <NavigationMenuLink
                         href="/proyectos/residenciales"
                         className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground"
                       >
@@ -132,7 +136,7 @@ const Navbar = () => {
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink 
+                      <NavigationMenuLink
                         href="/proyectos/comerciales"
                         className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground"
                       >
@@ -140,45 +144,47 @@ const Navbar = () => {
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink 
+                      <NavigationMenuLink
                         href="/#portfolio"
                         className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground"
                       >
-                        <div className="text-sm font-medium">Todos los Proyectos</div>
+                        <div className="text-sm font-medium">
+                          Todos los Proyectos
+                        </div>
                       </NavigationMenuLink>
                     </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              
+
               <NavigationMenuItem>
-                <NavigationMenuLink 
+                <NavigationMenuLink
                   href="/sobre-nosotros"
                   className={cn(
-                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    "px-3 py-2 hover:bg-white/30 rounded-md text-sm font-medium transition-colors",
                     scrolled ? "text-foreground" : "text-white"
                   )}
                 >
                   Sobre Nosotros
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <NavigationMenuLink 
+
+              {/* <NavigationMenuItem>
+                <NavigationMenuLink
                   href="/#testimonials"
                   className={cn(
-                    "px-3 py-2 hover:bg-primary/10 rounded-md text-sm font-medium transition-colors",
+                    "px-3 py-2 hover:bg-white/30 rounded-md text-sm font-medium transition-colors",
                     scrolled ? "text-foreground" : "text-white"
                   )}
                 >
                   Testimonios
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
-          
-          <a 
-            href="/#contact" 
+
+          <a
+            href="/#contact"
             className={cn(
               "btn-primary ml-2",
               !scrolled && "bg-white text-primary hover:bg-white/90"
@@ -189,20 +195,24 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button - Now with higher z-index to stay above the menu */}
-        <button 
+        <button
           className={cn(
-            "md:hidden relative z-[60]", 
-            isOpen ? "text-foreground" : (scrolled ? "text-foreground" : "text-white")
+            "md:hidden relative z-[60]",
+            isOpen
+              ? "text-foreground"
+              : scrolled
+              ? "text-foreground"
+              : "text-white"
           )}
           onClick={toggleMenu}
-          aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Navigation - Solid background */}
-      <div 
+      <div
         className={cn(
           "md:hidden fixed inset-0 bg-white z-50 pt-20 transform transition-transform duration-300 ease-in-out",
           isOpen ? "translate-x-0" : "translate-x-full"
@@ -216,16 +226,18 @@ const Navbar = () => {
           >
             Inicio
           </a>
-          
+
           <div className="w-full">
-            <div 
+            <div
               className="flex justify-center items-center w-full py-2 border-b border-gray-100 relative"
               onClick={() => {
-                const el = document.getElementById('servicios-mobile');
-                if (el) el.classList.toggle('hidden');
+                const el = document.getElementById("servicios-mobile");
+                if (el) el.classList.toggle("hidden");
               }}
             >
-              <span className="text-foreground text-xl font-medium">Servicios</span>
+              <span className="text-foreground text-xl font-medium">
+                Servicios
+              </span>
               <ChevronDown size={20} className="absolute right-0" />
             </div>
             <div id="servicios-mobile" className="hidden py-2 space-y-3">
@@ -252,16 +264,18 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="w-full">
-            <div 
+            <div
               className="flex justify-center items-center w-full py-2 border-b border-gray-100 relative"
               onClick={() => {
-                const el = document.getElementById('proyectos-mobile');
-                if (el) el.classList.toggle('hidden');
+                const el = document.getElementById("proyectos-mobile");
+                if (el) el.classList.toggle("hidden");
               }}
             >
-              <span className="text-foreground text-xl font-medium">Proyectos</span>
+              <span className="text-foreground text-xl font-medium">
+                Proyectos
+              </span>
               <ChevronDown size={20} className="absolute right-0" />
             </div>
             <div id="proyectos-mobile" className="hidden py-2 space-y-3">
@@ -288,7 +302,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          
+
           <a
             href="/sobre-nosotros"
             className="text-foreground text-xl font-medium hover:text-primary transition-colors"
@@ -296,17 +310,17 @@ const Navbar = () => {
           >
             Sobre Nosotros
           </a>
-          
-          <a
+
+          {/* <a
             href="/#testimonials"
             className="text-foreground text-xl font-medium hover:text-primary transition-colors"
             onClick={closeMenu}
           >
             Testimonios
-          </a>
-          
-          <a 
-            href="/#contact" 
+          </a> */}
+
+          <a
+            href="/#contact"
             className="btn-primary w-full text-center mt-4"
             onClick={closeMenu}
           >
