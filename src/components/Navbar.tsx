@@ -1,8 +1,8 @@
-
-// import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from "react";
+// import { useLocation } from "react-router-dom"; // Importa useLocation
 // import { cn } from "@/lib/utils";
-// import { Menu, X, ChevronDown, LogOut } from "lucide-react";
-// import { 
+// import { Menu, X, ChevronDown } from "lucide-react";
+// import {
 //   NavigationMenu,
 //   NavigationMenuContent,
 //   NavigationMenuItem,
@@ -15,6 +15,7 @@
 // const Navbar = () => {
 //   const [isOpen, setIsOpen] = useState(false);
 //   const [scrolled, setScrolled] = useState(false);
+//   const location = useLocation(); // Obtén la ruta actual
 
 //   const toggleMenu = () => setIsOpen(!isOpen);
 //   const closeMenu = () => setIsOpen(false);
@@ -29,17 +30,27 @@
 //       }
 //     };
 
-//     window.addEventListener('scroll', handleScroll);
+//     // Solo agregar el listener de scroll si estamos en la página de inicio
+//     if (location.pathname === "/") {
+//       window.addEventListener("scroll", handleScroll);
+//     }
+
+//     // Limpiar el listener al desmontar el componente
 //     return () => {
-//       window.removeEventListener('scroll', handleScroll);
+//       window.removeEventListener("scroll", handleScroll);
 //     };
-//   }, []);
+//   }, [location.pathname]); // Dependencia: location.pathname
 
 //   return (
 //     <nav
 //       className={cn(
 //         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-//         scrolled || isOpen ? "bg-white shadow-sm py-3" : "bg-transparent py-5"
+//         // Aplica el cambio de color solo si estamos en la página de inicio y se ha hecho scroll
+//         location.pathname === "/"
+//           ? scrolled || isOpen
+//             ? "bg-white shadow-sm py-3"
+//             : "bg-transparent py-5"
+//           : "bg-white shadow-sm py-3"
 //       )}
 //     >
 //       <div className="container-custom flex justify-between items-center">
@@ -49,7 +60,12 @@
 //             href="/"
 //             className={cn(
 //               "font-display text-2xl font-bold transition-all duration-300",
-//               scrolled || isOpen ? "text-primary" : "text-white"
+//               // Aplica el cambio de color solo si estamos en la página de inicio y se ha hecho scroll
+//               location.pathname === "/"
+//                 ? scrolled || isOpen
+//                   ? "text-primary"
+//                   : "text-white"
+//                 : "text-primary"
 //             )}
 //             aria-label="Donopoly Remodeling"
 //           >
@@ -66,7 +82,11 @@
 //                   href="/"
 //                   className={cn(
 //                     "px-3 py-2 hover:bg-white/30 rounded-md text-sm font-medium transition-colors",
-//                     scrolled ? "text-foreground" : "text-white"
+//                     location.pathname === "/"
+//                       ? scrolled
+//                         ? "text-foreground"
+//                         : "text-white"
+//                       : "text-foreground"
 //                   )}
 //                 >
 //                   Inicio
@@ -77,9 +97,11 @@
 //                 <NavigationMenuTrigger
 //                   className={cn(
 //                     "px-3 py-2 hover:bg-white/30 hover:text-white rounded-md text-sm font-medium transition-colors",
-//                     scrolled
-//                       ? "text-foreground hover:text-foreground"
-//                       : "text-white",
+//                     location.pathname === "/"
+//                       ? scrolled
+//                         ? "text-foreground hover:text-foreground"
+//                         : "text-white"
+//                       : "text-foreground hover:text-foreground",
 //                     "bg-transparent hover:bg-white/30 data-[state=open]:bg-bg-white/30"
 //                   )}
 //                 >
@@ -125,9 +147,11 @@
 //                 <NavigationMenuTrigger
 //                   className={cn(
 //                     "px-3 py-2 hover:bg-white/30 hover:text-white rounded-md text-sm font-medium transition-colors",
-//                     scrolled
-//                       ? "text-foreground hover:text-foreground"
-//                       : "text-white",
+//                     location.pathname === "/"
+//                       ? scrolled
+//                         ? "text-foreground hover:text-foreground"
+//                         : "text-white"
+//                       : "text-foreground hover:text-foreground",
 //                     "bg-transparent hover:bg-white/30 data-[state=open]:bg-white/30"
 //                   )}
 //                 >
@@ -170,24 +194,16 @@
 //                   href="/sobre-nosotros"
 //                   className={cn(
 //                     "px-3 py-2 hover:bg-white/30 rounded-md text-sm font-medium transition-colors",
-//                     scrolled ? "text-foreground" : "text-white"
+//                     location.pathname === "/"
+//                       ? scrolled
+//                         ? "text-foreground"
+//                         : "text-white"
+//                       : "text-foreground"
 //                   )}
 //                 >
 //                   Sobre Nosotros
 //                 </NavigationMenuLink>
 //               </NavigationMenuItem>
-
-//               {/* <NavigationMenuItem>
-//                 <NavigationMenuLink
-//                   href="/#testimonials"
-//                   className={cn(
-//                     "px-3 py-2 hover:bg-white/30 rounded-md text-sm font-medium transition-colors",
-//                     scrolled ? "text-foreground" : "text-white"
-//                   )}
-//                 >
-//                   Testimonios
-//                 </NavigationMenuLink>
-//               </NavigationMenuItem> */}
 //             </NavigationMenuList>
 //           </NavigationMenu>
 
@@ -195,7 +211,9 @@
 //             href="/#contact"
 //             className={cn(
 //               "btn-primary ml-2",
-//               !scrolled && "bg-white text-primary hover:bg-white/90"
+//               location.pathname === "/"
+//                 ? !scrolled && "bg-white text-primary hover:bg-white/90"
+//                 : "btn-primary"
 //             )}
 //           >
 //             Contáctanos
@@ -208,9 +226,11 @@
 //             "md:hidden relative z-[60]",
 //             isOpen
 //               ? "text-foreground"
-//               : scrolled
-//               ? "text-foreground"
-//               : "text-white"
+//               : location.pathname === "/"
+//               ? scrolled
+//                 ? "text-foreground"
+//                 : "text-white"
+//               : "text-foreground"
 //           )}
 //           onClick={toggleMenu}
 //           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
@@ -325,14 +345,6 @@
 //             Sobre Nosotros
 //           </a>
 
-//           {/* <a
-//             href="/#testimonials"
-//             className="text-foreground text-xl font-medium hover:text-primary transition-colors"
-//             onClick={closeMenu}
-//           >
-//             Testimonios
-//           </a> */}
-
 //           <a
 //             href="/#contact"
 //             className="btn-primary w-full text-center mt-4"
@@ -347,8 +359,6 @@
 // };
 
 // export default Navbar;
-
-
 
 
 
@@ -409,6 +419,20 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [location.pathname]); // Dependencia: location.pathname
+
+  // Función para alternar la visibilidad de los submenús
+  const toggleSubmenu = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      if (el.classList.contains("opacity-0")) {
+        el.classList.remove("opacity-0", "max-h-0");
+        el.classList.add("opacity-100", "max-h-[500px]");
+      } else {
+        el.classList.remove("opacity-100", "max-h-[500px]");
+        el.classList.add("opacity-0", "max-h-0");
+      }
+    }
+  };
 
   return (
     <nav
@@ -624,13 +648,11 @@ const Navbar = () => {
             Inicio
           </a>
 
+          {/* Submenú de Servicios */}
           <div className="w-full">
             <div
-              className="flex justify-center items-center w-full py-2 relative"
-              onClick={() => {
-                const el = document.getElementById("servicios-mobile");
-                if (el) el.classList.toggle("hidden");
-              }}
+              className="flex justify-center items-center w-full py-2 relative cursor-pointer"
+              onClick={() => toggleSubmenu("servicios-mobile")}
             >
               <span className="text-foreground text-lg font-medium">
                 Servicios
@@ -639,39 +661,39 @@ const Navbar = () => {
             </div>
             <div
               id="servicios-mobile"
-              className="hidden py-2 space-y-3 bg-primary/10 rounded-lg"
+              className="overflow-hidden transition-all duration-300 ease-in-out opacity-0 max-h-0"
             >
-              <a
-                href="/servicios/residencial"
-                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
-                onClick={closeMenu}
-              >
-                Remodelación Residencial
-              </a>
-              <a
-                href="/servicios/comercial"
-                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
-                onClick={closeMenu}
-              >
-                Construcción Comercial
-              </a>
-              <a
-                href="/#services"
-                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
-                onClick={closeMenu}
-              >
-                Todos los Servicios
-              </a>
+              <div className="py-2 space-y-3 bg-primary/10 rounded-lg">
+                <a
+                  href="/servicios/residencial"
+                  className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
+                  onClick={closeMenu}
+                >
+                  Remodelación Residencial
+                </a>
+                <a
+                  href="/servicios/comercial"
+                  className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
+                  onClick={closeMenu}
+                >
+                  Construcción Comercial
+                </a>
+                <a
+                  href="/#services"
+                  className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
+                  onClick={closeMenu}
+                >
+                  Todos los Servicios
+                </a>
+              </div>
             </div>
           </div>
 
+          {/* Submenú de Proyectos */}
           <div className="w-full">
             <div
-              className="flex justify-center items-center w-full py-2 relative"
-              onClick={() => {
-                const el = document.getElementById("proyectos-mobile");
-                if (el) el.classList.toggle("hidden");
-              }}
+              className="flex justify-center items-center w-full py-2 relative cursor-pointer"
+              onClick={() => toggleSubmenu("proyectos-mobile")}
             >
               <span className="text-foreground text-lg font-medium">
                 Proyectos
@@ -680,29 +702,31 @@ const Navbar = () => {
             </div>
             <div
               id="proyectos-mobile"
-              className="hidden py-2 space-y-3 bg-primary/10 rounded-lg"
+              className="overflow-hidden transition-all duration-300 ease-in-out opacity-0 max-h-0"
             >
-              <a
-                href="/proyectos/residenciales"
-                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
-                onClick={closeMenu}
-              >
-                Residenciales
-              </a>
-              <a
-                href="/proyectos/comerciales"
-                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
-                onClick={closeMenu}
-              >
-                Comerciales
-              </a>
-              <a
-                href="/#portfolio"
-                className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
-                onClick={closeMenu}
-              >
-                Todos los Proyectos
-              </a>
+              <div className="py-2 space-y-3 bg-primary/10 rounded-lg">
+                <a
+                  href="/proyectos/residenciales"
+                  className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
+                  onClick={closeMenu}
+                >
+                  Residenciales
+                </a>
+                <a
+                  href="/proyectos/comerciales"
+                  className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
+                  onClick={closeMenu}
+                >
+                  Comerciales
+                </a>
+                <a
+                  href="/#portfolio"
+                  className="block text-center text-muted-foreground hover:text-primary transition-colors py-1"
+                  onClick={closeMenu}
+                >
+                  Todos los Proyectos
+                </a>
+              </div>
             </div>
           </div>
 
