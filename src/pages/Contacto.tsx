@@ -8,20 +8,20 @@ import { Home } from "lucide-react";
 
 const Contacto = () => {
   useEffect(() => {
-    document.title = 'Contacto | Donopoly';
+    document.title = 'Contacto | Arquitectura';
   }, []);
 
   return (
     <div className="min-h-screen w-full overflow-visible">
       <Navbar />
-      
-      <div className="pt-20 pb-12 bg-secondary/50">
+
+      <div className="pt-20 md:pt-24 pb-12 bg-secondary/50">
         <div className="container-custom">
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">
-                  <Home className="h-4 w-4 mr-1" />
+                  {/* <Home className="h-4 w-4 mr-1" /> */}
                   Inicio
                 </BreadcrumbLink>
               </BreadcrumbItem>
@@ -31,10 +31,11 @@ const Contacto = () => {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          
+
           <h1 className="heading-lg mb-4">Contacto</h1>
           <p className="paragraph max-w-3xl">
-            Estamos aquí para responder a sus preguntas y ayudarle a comenzar su próximo proyecto.
+            Estamos aquí para responder a sus preguntas y ayudarle a comenzar su
+            próximo proyecto.
           </p>
         </div>
       </div>

@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = 'Donopoly | Construcción y Remodelación de Calidad';
+    document.title = 'Arquitectura';
   }, []);
 
   return (

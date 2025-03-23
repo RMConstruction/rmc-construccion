@@ -6,14 +6,14 @@ import { Award, CheckCircle, Users, Clock, Calendar, Star } from "lucide-react";
 
 const SobreNosotros = () => {
   useEffect(() => {
-    document.title = 'Sobre Nosotros | Donopoly';
+    document.title = "Sobre Nosotros | Arquitectura";
   }, []);
 
   return (
     <div className="min-h-screen w-full overflow-visible">
       <Navbar />
 
-      <div className="pt-20 pb-12 bg-secondary/50">
+      <div className="pt-20 md:pt-24 pb-12 bg-secondary/50">
         <div className="container-custom">
           <Breadcrumb className="mb-4">
             <BreadcrumbList>

@@ -17,7 +17,7 @@ interface Project {
 
 const ProyectosComerciales = () => {
   useEffect(() => {
-    document.title = 'Proyectos Comerciales | Donopoly';
+    document.title = "Proyectos Comerciales | Arquitectura";
   }, []);
 
   const [projects] = useState<Project[]>([
@@ -74,8 +74,8 @@ const ProyectosComerciales = () => {
   return (
     <div className="min-h-screen w-full overflow-visible">
       <Navbar />
-      
-      <div className="pt-20 pb-12 bg-secondary/50">
+
+      <div className="pt-20 md:pt-24 pb-12 bg-secondary/50">
         <div className="container-custom">
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
@@ -95,10 +95,11 @@ const ProyectosComerciales = () => {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          
+
           <h1 className="heading-lg mb-4">Proyectos Comerciales</h1>
           <p className="paragraph max-w-3xl">
-            Explore nuestra galería de proyectos comerciales donde hemos creado espacios funcionales y atractivos para diversos tipos de negocios.
+            Explore nuestra galería de proyectos comerciales donde hemos creado
+            espacios funcionales y atractivos para diversos tipos de negocios.
           </p>
         </div>
       </div>
@@ -107,40 +108,58 @@ const ProyectosComerciales = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
+              <Card
+                key={project.id}
+                className="overflow-hidden group hover:shadow-lg transition-all duration-300"
+              >
                 <div className="relative h-[250px] overflow-hidden">
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title} 
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
                   <div className="flex gap-4 text-sm text-muted-foreground mb-3">
                     <span>{project.location}</span>
                     <span>•</span>
                     <span>{project.year}</span>
                   </div>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <a href="#" className="text-primary font-medium hover:underline">Ver detalles →</a>
+                  <p className="text-muted-foreground mb-4">
+                    {project.description}
+                  </p>
+                  <a
+                    href="#"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    Ver detalles →
+                  </a>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
-      
+
       <section className="py-16 bg-secondary/30">
         <div className="container-custom text-center">
-          <h2 className="text-2xl font-display font-bold mb-6">¿Necesita un espacio comercial a medida?</h2>
+          <h2 className="text-2xl font-display font-bold mb-6">
+            ¿Necesita un espacio comercial a medida?
+          </h2>
           <p className="mb-8 max-w-2xl mx-auto">
-            Nuestro equipo de profesionales está listo para crear el espacio comercial perfecto que impulse su negocio y refleje su identidad de marca.
+            Nuestro equipo de profesionales está listo para crear el espacio
+            comercial perfecto que impulse su negocio y refleje su identidad de
+            marca.
           </p>
-          <a href="/#contact" className="btn-primary">Solicitar Presupuesto</a>
+          <a href="/#contact" className="btn-primary">
+            Solicitar Presupuesto
+          </a>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
