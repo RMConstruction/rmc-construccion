@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = 'Arquitectura';
+    document.title = 'RM Construction & Design Studio Inc';
   }, []);
 
   return (
@@ -26,22 +26,23 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="heading-lg mb-4">
-                Introducción a Nuestra Empresa
+              Introduction to Our Company
               </h2>
               <p className="paragraph mb-6">
-                En Arquitectura, nos especializamos en arquitectura, ingeniería
-                y construcción de alta calidad. Con más de 15 años de
-                experiencia en el sector, ofrecemos soluciones integrales para
-                proyectos residenciales y comerciales.
+              At RM Construction & Design Studio Inc., we transform architectural visions into reality through
+              innovative design, expert project planning, and precision execution. Specializing in new construction,
+              custom-built concepts, home additions, Accessory Dwelling Units (ADUs), and remodels, we craft high-
+              quality, tailored solutions that reflect your unique vision."
               </p>
               <p className="paragraph">
-                Nuestro enfoque combina innovación técnica, diseño funcional y
-                construcción sostenible para crear espacios que superan las
-                expectativas de nuestros clientes.
+              "With a commitment to excellence, we combine cutting-edge design, strict code compliance, and
+              seamless project management to ensure results that are not only visually stunning but also structurally
+              sound and built to last. From concept to completion, we manage every detail with professionalism and
+              efficiency—bringing your dream space to life, on time and within budget.
               </p>
               <div className="mt-8">
                 <a href="/sobre-nosotros" className="btn-primary">
-                  Conozca más sobre nosotros
+                Know more about us
                 </a>
               </div>
             </div>
@@ -66,7 +67,7 @@ const Index = () => {
       <Services />
 
       {/* Nuestros Proyectos */}
-      <Portfolio />
+      {/* <Portfolio /> */}
 
       {/* Contacto */}
       <Contact />

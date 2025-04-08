@@ -41,36 +41,36 @@ const Services = () => {
   const services: Service[] = [
     {
       icon: <Building className="h-10 w-10" />,
-      title: 'Área de Construcción',
-      description: 'Servicios completos de construcción para proyectos residenciales y comerciales.',
+      title: 'Construction Area',
+      description: 'Complete construction services for residential and commercial projects.',
       link: '/servicios/construccion',
       imageUrl: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1931'
     },
-    {
-      icon: <Briefcase className="h-10 w-10" />,
-      title: 'Project Manager (PM)',
-      description: 'Gestión profesional de proyectos para optimizar tiempos, costos y resultados.',
-      link: '/servicios/project-manager',
-      imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1470'
-    },
+    // {
+    //   icon: <Briefcase className="h-10 w-10" />,
+    //   title: 'Project Manager (PM)',
+    //   description: 'Gestión profesional de proyectos para optimizar tiempos, costos y resultados.',
+    //   link: '/servicios/project-manager',
+    //   imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1470'
+    // },
     {
       icon: <FileText className="h-10 w-10" />,
-      title: 'Planos 2D',
-      description: 'Diseño detallado y técnico de planos para una visualización clara de su proyecto.',
+      title: '2D Plans',
+      description: 'Detailed and technical drawing design for a clear visualization of your project.',
       link: '/servicios/planos-2d',
       imageUrl: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=1470'
     },
-    {
-      icon: <Cuboid className="h-10 w-10" />,
-      title: 'Renders 3D',
-      description: 'Visualizaciones tridimensionales realistas para ver su proyecto antes de construirlo.',
-      link: '/servicios/renders-3d',
-      imageUrl: 'https://images.unsplash.com/photo-1618005198919-177e9dd3b230?auto=format&fit=crop&q=80&w=1474'
-    },
+    // {
+    //   icon: <Cuboid className="h-10 w-10" />,
+    //   title: 'Renders 3D',
+    //   description: 'Visualizaciones tridimensionales realistas para ver su proyecto antes de construirlo.',
+    //   link: '/servicios/renders-3d',
+    //   imageUrl: 'https://images.unsplash.com/photo-1618005198919-177e9dd3b230?auto=format&fit=crop&q=80&w=1474'
+    // },
     {
       icon: <ClipboardCheck className="h-10 w-10" />,
-      title: 'Permisos',
-      description: 'Gestión completa de permisos, licencias y cumplimiento normativo para su proyecto.',
+      title: 'Permissions',
+      description: 'Complete management of permits, licenses, and regulatory compliance for your project.',
       link: '/servicios/permisos',
       imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1470'
     }
@@ -84,10 +84,10 @@ const Services = () => {
     >
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="heading-lg mb-4">Nuestros Servicios</h2>
-          <p className="paragraph">
-            Ofrecemos una amplia gama de servicios de construcción y diseño para transformar su espacio en algo extraordinario. Cada proyecto es único y recibe nuestra dedicación total.
-          </p>
+          <h2 className="heading-lg mb-4">Our Services</h2>
+          {/* <p className="paragraph">
+          We offer a wide range of construction and design services to transform your space into something extraordinary. Each project is unique and receives our full dedication.
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -123,7 +123,7 @@ const Services = () => {
                   href={service.link} 
                   className="flex items-center text-primary font-medium group-hover:text-primary/80"
                 >
-                  Ver más
+                  See more
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>

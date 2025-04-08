@@ -40,41 +40,41 @@ const Hero = () => {
         ref={textRef}
         className="relative container-custom h-full flex flex-col justify-center"
       >
-        <div className="max-w-3xl animate-fade-in-up">
+        <div className="max-w-3xl md:mt-60 lg:mt-16 animate-fade-in-up">
           <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm py-1.5 px-4 rounded-full inline-flex items-center gap-2 mb-6 font-medium">
             <span className="bg-white w-2 h-2 rounded-full"></span>
-            Excelencia en Construcción y Diseño
+            Excellence in Construction and Design
           </div>
           <h1 className="heading-xl text-white mb-8 leading-tight">
-            Transformamos <span className="text-primary">Ideas</span> en
+            We transform <span className="text-primary">Ideas</span> into
             <br />
-            <span className="text-primary">Espacios Excepcionales</span>
+            <span className="text-primary">Exceptional Spaces</span>
           </h1>
           <p className="text-white/90 text-xl mb-10 max-w-2xl font-light">
-            Especialistas en arquitectura, construcción y gestión de proyectos
-            con más de 15 años creando espacios que inspiran y perduran.
+            Specialists in architecture, construction, and project management
+            with over 6 years of experience creating inspiring and enduring spaces.
           </p>
           <div className="flex flex-wrap gap-5">
             <a
               href="#services"
               className="btn-primary flex items-center gap-2 group"
             >
-              Explorar Servicios
+              Explore Services
               <ArrowRight
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </a>
-            <a
+            {/* <a
               href="#portfolio"
               className="bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 px-6 py-3 rounded-md font-medium transition-all duration-300 flex items-center gap-2"
             >
-              Ver Proyectos
+              See Projects
               <ArrowDown
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-y-1"
               />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

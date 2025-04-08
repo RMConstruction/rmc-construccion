@@ -30,20 +30,20 @@ const CompanyBenefits = () => {
 
   const benefits = [
     {
-      title: "Precisión y Calidad",
-      description: "Aplicamos los más altos estándares en cada proyecto, garantizando resultados excepcionales."
+      title: "Tailored Solutions & Seamless Execution",
+      description: "Every project is unique, and so is our approach. We craft custom designs that align with your style, goals, and budget—ensuring a streamlined experience from concept to completion."
     },
     {
-      title: "Optimización de Tiempos",
-      description: "Nuestros procesos eficientes aseguran el cumplimiento de plazos y la entrega puntual de proyectos."
+      title: "Transparency & Client-Focused Service",
+      description: "Clear communication and meticulous attention to detail define our process. We keep you informed at every stage, ensuring a smooth, stress-free experience with no surprises."
     },
     {
-      title: "Cumplimiento Normativo",
-      description: "Nos encargamos de todos los permisos y regulaciones necesarios para su tranquilidad."
+      title: "Sustainable & High-Quality Craftsmanship",
+      description: "We prioritize smart, eco-conscious design practices and top-tier materials, delivering durable, energy-efficient, and visually stunning results.."
     },
     {
-      title: "Equipo Profesional",
-      description: "Contamos con expertos en cada área para ofrecer soluciones integrales y especializadas."
+      title: "Partner with RM Construction & Design Studio Inc.",
+      description: "Experience the difference of working with a team that values your vision and delivers with expertise, precision, and integrity."
     }
   ];
 
@@ -55,12 +55,13 @@ const CompanyBenefits = () => {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="heading-lg mb-4">
-            Beneficios de Trabajar con Nosotros
+            Benefits of Working with Us
           </h2>
           <p className="paragraph">
-            En Arquitectura nos distinguimos por ofrecer un servicio de
-            excelencia, enfocado en la satisfacción del cliente y la calidad del
-            resultado final.
+          Why Choose RM Construction & Design Studio Inc.? <br />
+          Expertise. Innovation. Quality You Can Trust. <br /><br />
+          At RM Construction & Design Studio Inc., we go beyond design—we bring your vision to life through
+          thoughtful planning, precision, and a strong commitment to excellence. Here’s why clients choose us:
           </p>
         </div>
 

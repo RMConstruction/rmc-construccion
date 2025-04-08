@@ -7,7 +7,7 @@ import { Home, CheckCircle } from "lucide-react";
 
 const Construccion = () => {
   useEffect(() => {
-    document.title = 'Área de Construcción | Arquitectura';
+    document.title = 'Construction Area';
   }, []);
 
   return (
@@ -21,24 +21,23 @@ const Construccion = () => {
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">
                   {/* <Home className="h-4 w-4 mr-1" /> */}
-                  Inicio
+                  Home
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/servicios">Servicios</BreadcrumbLink>
+                <BreadcrumbLink href="/servicios">Services</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink>Área de Construcción</BreadcrumbLink>
+                <BreadcrumbLink>Construction Area</BreadcrumbLink>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
 
-          <h1 className="heading-lg mb-4">Área de Construcción</h1>
+          <h1 className="heading-lg mb-4">Construction Area</h1>
           <p className="paragraph max-w-3xl">
-            Servicios profesionales de construcción para proyectos residenciales
-            y comerciales con los más altos estándares de calidad.
+          Thoughtful Designs & Seamless Project Execution for Inspired Living
           </p>
         </div>
       </div>
@@ -48,14 +47,12 @@ const Construccion = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl font-display font-bold mb-6">
-                Servicios de Construcción
+                New Build Solutions
               </h2>
               <p className="mb-6">
-                En Arquitectura ofrecemos servicios completos de construcción,
-                incluyendo obras civiles, remodelaciones, ampliaciones y más.
-                Nuestro equipo de profesionales altamente calificados asegura
-                que cada proyecto se complete con precisión y atención al
-                detalle.
+              We specialize in custom home design and project planning tailored to your vision and lifestyle. From the
+              ground up, our team works closely with you to develop a design-ready concept that aligns with your
+              eeds—ensuring a smooth transition from idea to reality.
               </p>
 
               <div className="space-y-4 mb-8">

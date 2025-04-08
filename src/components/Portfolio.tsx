@@ -83,12 +83,12 @@ const Portfolio = () => {
   }, []);
 
   const categories = [
-    { id: 'all', label: 'Todos' },
-    { id: 'residential', label: 'Residencial' },
-    { id: 'commercial', label: 'Comercial' },
-    { id: 'kitchen', label: 'Cocinas' },
-    { id: 'bathroom', label: 'Baños' },
-    { id: 'exterior', label: 'Exteriores' },
+    { id: 'all', label: 'All' },
+    { id: 'residential', label: 'Residential' },
+    { id: 'commercial', label: 'Commercial' },
+    { id: 'kitchen', label: 'Kitchen' },
+    { id: 'bathroom', label: 'Bathroom' },
+    { id: 'exterior', label: 'Exteriors' },
   ];
 
   const filteredProjects = activeCategory === 'all' 
@@ -103,9 +103,9 @@ const Portfolio = () => {
     >
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="heading-lg mb-4">Nuestros Proyectos</h2>
+          <h2 className="heading-lg mb-4">Our Projects</h2>
           <p className="paragraph">
-            Explore nuestra galería de proyectos completados para ver ejemplos de nuestro trabajo excepcional y la calidad que ofrecemos en cada proyecto.
+          Explore our gallery of completed projects to see examples of our exceptional work and the quality we deliver on every project.
           </p>
         </div>
 

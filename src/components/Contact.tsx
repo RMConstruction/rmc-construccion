@@ -76,17 +76,16 @@ const Contact = () => {
     >
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="heading-lg mb-4">Contáctenos</h2>
-          <p className="paragraph">
-            Estamos listos para hacer realidad su proyecto. Contáctenos hoy
-            mismo para discutir sus necesidades y cómo podemos ayudarle.
-          </p>
+          <h2 className="heading-lg mb-4">Contact Us</h2>
+          {/* <p className="paragraph">
+          We're ready to make your project a reality. Contact us today to discuss your needs and how we can help.
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h3 className="text-2xl font-semibold mb-6">
-              Información de Contacto
+            Contact Information
             </h3>
 
             <div className="space-y-6">
@@ -95,7 +94,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Teléfono</p>
+                  <p className="text-sm text-muted-foreground">Phone</p>
                   <p className="font-medium">+1 (555) 123-4567</p>
                 </div>
               </div>
@@ -106,7 +105,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    Correo Electrónico
+                  Email
                   </p>
                   <p className="font-medium">info@arquitectura.com</p>
                 </div>
@@ -125,7 +124,7 @@ const Contact = () => {
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-6">Envíenos un Mensaje</h3>
+            <h3 className="text-xl font-semibold mb-6">Send us a Message</h3>
 
             <Form {...form}>
               <form
@@ -137,9 +136,9 @@ const Contact = () => {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Nombre</FormLabel>
+                      <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Su nombre" {...field} />
+                        <Input placeholder="Your name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -152,10 +151,10 @@ const Contact = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Correo Electrónico</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Su correo electrónico"
+                            placeholder="Your email"
                             {...field}
                           />
                         </FormControl>
@@ -169,10 +168,10 @@ const Contact = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Teléfono</FormLabel>
+                        <FormLabel>Phone</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Su número de teléfono"
+                            placeholder="Your phone number"
                             {...field}
                           />
                         </FormControl>
@@ -187,26 +186,21 @@ const Contact = () => {
                   name="service"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Servicio de Interés</FormLabel>
+                      <FormLabel>Interest Service</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Seleccione un servicio" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
                           <SelectItem value="construccion">
-                            Área de Construcción
+                          Construction Area
                           </SelectItem>
-                          <SelectItem value="project-manager">
-                            Project Manager (PM)
-                          </SelectItem>
-                          <SelectItem value="planos-2d">Planos 2D</SelectItem>
-                          <SelectItem value="renders-3d">Renders 3D</SelectItem>
-                          <SelectItem value="permisos">Permisos</SelectItem>
+                          <SelectItem value="planos-2d">2D Plans</SelectItem>
+                          <SelectItem value="permisos">Permissions</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -219,10 +213,10 @@ const Contact = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Mensaje</FormLabel>
+                      <FormLabel>Message</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Escriba su mensaje aquí..."
+                          placeholder="Write your message here..."
                           {...field}
                           className="min-h-[120px]"
                         />
@@ -233,7 +227,7 @@ const Contact = () => {
                 />
 
                 <Button type="submit" className="w-full">
-                  Enviar Mensaje
+                Send Message
                 </Button>
               </form>
             </Form>
