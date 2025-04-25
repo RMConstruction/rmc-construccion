@@ -84,7 +84,7 @@
   }
 
   .paragraph {
-    @apply text-base md:text-lg leading-relaxed text-muted-foreground;
+    @apply text-base md:text-lg leading-relaxed text-muted-foreground font-light;
   }
 
   .animate-fade-in {

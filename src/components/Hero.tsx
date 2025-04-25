@@ -1,7 +1,6 @@
-
-import React, { useEffect, useRef } from 'react';
-import { cn } from "@/lib/utils";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { useEffect, useRef } from 'react';
+import { ArrowRight } from "lucide-react";
+import imgHero from "../../public/assets/img/heroimg.jpeg";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -27,9 +26,11 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="relative h-screen bg-cover bg-center bg-fixed bg-no-repeat overflow-hidden"
+      className="relative h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1931')`,
+        backgroundImage: `url(${imgHero})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       {/* Overlay with gradient */}
@@ -45,14 +46,14 @@ const Hero = () => {
             <span className="bg-white w-2 h-2 rounded-full"></span>
             Excellence in Construction and Design
           </div>
-          <h1 className="heading-xl text-white mb-8 leading-tight">
+          <h1 className="heading-lg text-white mb-8 leading-tight lg:heading-xl">
             We transform <span className="text-primary">Ideas</span> into
             <br />
             <span className="text-primary">Exceptional Spaces</span>
           </h1>
           <p className="text-white/90 text-xl mb-10 max-w-2xl font-light">
-            Specialists in architecture, construction, and project management
-            with over 6 years of experience creating inspiring and enduring spaces.
+            Specialists in building design, construction, and project management
+            with over 10+ years of experience creating inspiring and enduring spaces.
           </p>
           <div className="flex flex-wrap gap-5">
             <a
@@ -65,16 +66,6 @@ const Hero = () => {
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </a>
-            {/* <a
-              href="#portfolio"
-              className="bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 px-6 py-3 rounded-md font-medium transition-all duration-300 flex items-center gap-2"
-            >
-              See Projects
-              <ArrowDown
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-y-1"
-              />
-            </a> */}
           </div>
         </div>
       </div>

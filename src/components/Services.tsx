@@ -1,8 +1,8 @@
-
 import React, { useRef, useEffect } from 'react';
-import { cn } from "@/lib/utils";
-import { ArrowRight, Building, Briefcase, FileText, Cuboid, ClipboardCheck } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ArrowRight, Building, FileText, ClipboardCheck } from "lucide-react";
+import project1 from "../../public/assets/img/construction-zone.jpeg";
+import project2 from "../../public/assets/img/architectural-design.jpeg";
+import project3 from "../../public/assets/img/building-permission.jpg";
 
 interface Service {
   icon: React.ReactNode;
@@ -40,39 +40,25 @@ const Services = () => {
 
   const services: Service[] = [
     {
-      icon: <Building className="h-10 w-10" />,
-      title: 'Construction Area',
-      description: 'Complete construction services for residential and commercial projects.',
-      link: '/servicios/construccion',
-      imageUrl: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1931'
+      icon: <Building className="h-6 w-6" />,
+      title: 'Construction Zone',
+      description: '',
+      link: '/services/construction-zone',
+      imageUrl: project1
     },
-    // {
-    //   icon: <Briefcase className="h-10 w-10" />,
-    //   title: 'Project Manager (PM)',
-    //   description: 'Gestión profesional de proyectos para optimizar tiempos, costos y resultados.',
-    //   link: '/servicios/project-manager',
-    //   imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1470'
-    // },
     {
-      icon: <FileText className="h-10 w-10" />,
-      title: '2D Plans',
-      description: 'Detailed and technical drawing design for a clear visualization of your project.',
-      link: '/servicios/planos-2d',
-      imageUrl: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=1470'
+      icon: <FileText className="h-6 w-6" />,
+      title: 'Design Studio',
+      description: '',
+      link: '/services/design-studio',
+      imageUrl: project2
     },
-    // {
-    //   icon: <Cuboid className="h-10 w-10" />,
-    //   title: 'Renders 3D',
-    //   description: 'Visualizaciones tridimensionales realistas para ver su proyecto antes de construirlo.',
-    //   link: '/servicios/renders-3d',
-    //   imageUrl: 'https://images.unsplash.com/photo-1618005198919-177e9dd3b230?auto=format&fit=crop&q=80&w=1474'
-    // },
     {
-      icon: <ClipboardCheck className="h-10 w-10" />,
-      title: 'Permissions',
-      description: 'Complete management of permits, licenses, and regulatory compliance for your project.',
-      link: '/servicios/permisos',
-      imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1470'
+      icon: <ClipboardCheck className="h-6 w-6" />,
+      title: 'Building Permits',
+      description: '',
+      link: '/services/building-permits',
+      imageUrl: project3
     }
   ];
 
@@ -85,47 +71,39 @@ const Services = () => {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg mb-4">Our Services</h2>
-          {/* <p className="paragraph">
-          We offer a wide range of construction and design services to transform your space into something extraordinary. Each project is unique and receives our full dedication.
-          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className={cn(
-                "bg-white rounded-lg shadow-md transition-all duration-500 hover:shadow-xl group overflow-hidden",
-                "transform hover:translate-y-[-5px]"
-              )}
+              className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-500 shadow-xl"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative">
-                <AspectRatio ratio={16 / 9}>
-                  <img 
-                    src={service.imageUrl} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </AspectRatio>
-                <div className="absolute top-4 right-4 bg-primary text-white p-2 rounded-full">
-                  {service.icon}
+              <div className="relative h-[300px] overflow-hidden">
+                <img
+                  src={service.imageUrl}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-0 opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-1 left-0 right-0 p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-white text-xl font-medium">{service.title}</h3>
+                    {/* <p className="text-white/80 text-sm">{service.description}</p> */}
+                    <a 
+                      href={service.link} 
+                      className="flex items-center text-white font-medium mt-2 rounded-md group-hover:text-white/80"
+                    >
+                      See more
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  {service.description}
-                </p>
-                <a 
-                  href={service.link} 
-                  className="flex items-center text-primary font-medium group-hover:text-primary/80"
-                >
-                  See more
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
+              <div className="absolute top-4 right-4">
+                <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white p-3 rounded-full flex items-center justify-center">
+                  {service.icon}
+                </span>
               </div>
             </div>
           ))}

@@ -1,9 +1,8 @@
 
-import React, { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { useEffect, useState } from 'react';
+import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Home } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface Project {
@@ -81,7 +80,6 @@ const ProyectosComerciales = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">
-                  {/* <Home className="h-4 w-4 mr-1" /> */}
                   Inicio
                 </BreadcrumbLink>
               </BreadcrumbItem>

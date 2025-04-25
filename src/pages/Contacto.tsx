@@ -1,14 +1,12 @@
-
-import React, { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import { useEffect } from 'react';
+import Navbar from '@/components/Navbar/Navbar';
+import Contact from '@/components/Contact/Contact';
+import Footer from '@/components/Footer/Footer';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Home } from "lucide-react";
 
 const Contacto = () => {
   useEffect(() => {
-    document.title = 'Contacto | Arquitectura';
+    document.title = 'Contacto | RM Construction & Design Studio Inc.';
   }, []);
 
   return (
@@ -21,21 +19,19 @@ const Contacto = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">
-                  {/* <Home className="h-4 w-4 mr-1" /> */}
-                  Inicio
+                  Home
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink>Contacto</BreadcrumbLink>
+                <BreadcrumbLink>Contact</BreadcrumbLink>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
 
-          <h1 className="heading-lg mb-4">Contacto</h1>
+          <h1 className="heading-lg mb-4">Contact</h1>
           <p className="paragraph max-w-3xl">
-            Estamos aquí para responder a sus preguntas y ayudarle a comenzar su
-            próximo proyecto.
+            We're here to answer your questions and help you get started on your next project.
           </p>
         </div>
       </div>

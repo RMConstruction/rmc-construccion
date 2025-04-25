@@ -1,13 +1,13 @@
-
 import React, { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
-import CompanyBenefits from '@/components/CompanyBenefits';
+import CompanyBenefits from '@/components/Benefits/CompanyBenefits';
 import Trajectory from '@/components/Trajectory';
-import Portfolio from '@/components/Portfolio';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+// import Portfolio from '@/components/Portfolio';
+import Contact from '@/components/Contact/Contact';
+import Footer from '@/components/Footer/Footer';
+import imgOurCompany from '../../public/assets/img/our company.jpeg';
 
 const Index = () => {
   useEffect(() => {
@@ -29,7 +29,7 @@ const Index = () => {
               Introduction to Our Company
               </h2>
               <p className="paragraph mb-6">
-              At RM Construction & Design Studio Inc., we transform architectural visions into reality through
+              At RM Construction & Design Studio Inc., we transform visions into reality through
               innovative design, expert project planning, and precision execution. Specializing in new construction,
               custom-built concepts, home additions, Accessory Dwelling Units (ADUs), and remodels, we craft high-
               quality, tailored solutions that reflect your unique vision."
@@ -41,14 +41,14 @@ const Index = () => {
               efficiency—bringing your dream space to life, on time and within budget.
               </p>
               <div className="mt-8">
-                <a href="/sobre-nosotros" className="btn-primary">
+                <a href="/about-us" className="btn-primary">
                 Know more about us
                 </a>
               </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=2670&auto=format&fit=crop"
+                src={imgOurCompany}
                 alt="Proyectos destacados"
                 className="w-full h-auto object-cover"
               />

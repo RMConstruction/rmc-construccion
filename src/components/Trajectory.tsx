@@ -1,7 +1,5 @@
-
-import React, { useRef, useEffect } from 'react';
-import { Calendar, Award, Users, Sparkle } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useRef, useEffect } from 'react';
+import { Calendar, Award, Users } from "lucide-react";
 
 const Trajectory = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -37,41 +35,28 @@ const Trajectory = () => {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="heading-lg mb-4">Our Trajectory</h2>
-          {/* <p className="paragraph">
-          At RM Construction & Design Studio Inc, we are proud of our long history of excellence and exceptional service. These numbers reflect our commitment to quality.
-          </p> */}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-secondary/20 p-8 rounded-lg text-center shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-              <Calendar className="h-8 w-8" />
-            </div>
-            <h3 className="text-4xl font-bold mb-2">6+</h3>
-            <p className="text-lg font-medium">Years of experience</p>
+        <div className="bg-secondary/10 p-6 rounded-xl flex flex-col space-y-4 md:flex-row text-center shadow-lg divide-y md:divide-y-0 md:divide-x md:divide-gray-300">
+          {/* Bloque 1 */}
+          <div className="flex-1 px-4 flex flex-col items-center justify-center pt-0 md:pt-0            transition-all duration-300 transform hover:-translate-y-2">
+            <Calendar className="h-7 w-7 text-primary mb-1" />
+            <h3 className="text-3xl font-bold">10+</h3>
+            <p className="text-md text-muted-foreground">Years of Experience</p>
           </div>
 
-          <div
-            className={cn(
-              "p-8 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-3",
-              "bg-primary/10 shadow-xl scale-105 relative"
-            )}
-          >
-            <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-              <Award className="h-10 w-10" />
-            </div>
-            <h3 className="text-5xl font-bold mb-3 text-primary">56+</h3>
-            <p className="text-xl font-medium text-primary">
-            Pojects Completed
-            </p>
+          {/* Bloque 2 */}
+          <div className="flex-1 px-4 flex flex-col items-center justify-center pt-4 md:pt-0            transition-all duration-300 transform hover:-translate-y-2">
+            <Award className="h-7 w-7 text-primary mb-1" />
+            <h3 className="text-3xl font-bold">56+</h3>
+            <p className="text-md text-muted-foreground">Projects Completed</p>
           </div>
 
-          <div className="bg-secondary/20 p-8 rounded-lg text-center shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-              <Users className="h-8 w-8" />
-            </div>
-            <h3 className="text-4xl font-bold mb-2">56+</h3>
-            <p className="text-lg font-medium">Happy Clients</p>
+          {/* Bloque 3 */}
+          <div className="flex-1 px-4 flex flex-col items-center justify-center pt-4 md:pt-0            transition-all duration-300 transform hover:-translate-y-2">
+            <Users className="h-7 w-7 text-primary mb-1" />
+            <h3 className="text-3xl font-bold">56+</h3>
+            <p className="text-md text-muted-foreground">Happy Clients</p>
           </div>
         </div>
       </div>
